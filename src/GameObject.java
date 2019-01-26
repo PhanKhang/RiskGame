@@ -2,9 +2,9 @@ import java.awt.*;
 
 public abstract class GameObject {
 
-    protected int x, y;
-    protected ID id;
-    protected int velX, velY;
+    int x, y;
+    ID id;
+    int velX, velY;
 
     public GameObject(int x, int y, ID id){
         this.x = x;
@@ -14,6 +14,11 @@ public abstract class GameObject {
 
     public abstract void tick();
     public abstract void render(Graphics g);
+
+    
+
+    public abstract void clicked();
+    public abstract void released();
 
     public void setX (int x){
         this.x = x;

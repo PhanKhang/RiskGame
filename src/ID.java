@@ -4,5 +4,5 @@ public enum  ID {
     Enemy(),
     Alaska(),
     Alberta(),
-
+    Army(),
 }

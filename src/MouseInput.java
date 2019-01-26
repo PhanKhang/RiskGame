@@ -15,13 +15,32 @@ public class MouseInput extends MouseAdapter {
         System.out.println(mx+ " "+my);
 
 
+        for (int i = 0; i < handler.objects.size(); i++) {
+            GameObject tempObject = handler.objects.get(i);
+
+            if(tempObject.getX() <= mx && tempObject.getX() + 32 >= mx &&
+                    tempObject.getY() <= my && tempObject.getY() + 32 >= my){
+                System.out.println(mx+ " "+my +" object pressed: "+tempObject.getId());
+                tempObject.clicked();
+            }
+        }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        int mx = e.getX();
+        int my = e.getY();
+
+        System.out.println(mx+ " "+my);
+
 
         for (int i = 0; i < handler.objects.size(); i++) {
             GameObject tempObject = handler.objects.get(i);
 
             if(tempObject.getX() <= mx && tempObject.getX() + 32 >= mx &&
                     tempObject.getY() <= my && tempObject.getY() + 32 >= my){
-                System.out.println(mx+ " "+my +" object: "+tempObject.getId());
+                System.out.println(mx+ " "+my +" object released: "+tempObject.getId());
+                tempObject.released();
             }
         }
     }
