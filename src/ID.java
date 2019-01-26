@@ -1,6 +1,8 @@
 public enum  ID {
     Player(),
     Player2(),
-    Enemy()
+    Enemy(),
+    Alaska(),
+    Alberta(),
 
 }
