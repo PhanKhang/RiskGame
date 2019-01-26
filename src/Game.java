@@ -20,12 +20,24 @@ public class Game extends Canvas implements Runnable {
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
         new Window(WIDTH, HEIGHT, "Lets build a game!", this);
-
+        LoadMap();
         handler.addObject(new Player(WIDTH/2 - 100,HEIGHT/2,ID.Player)); // 500 375
-        handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2));
+        //handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2));
+       // handler.addObject(new Country(WIDTH/2 + 10,HEIGHT/2+10,ID.Alaska,Continent.North_America));
     }
 
-    @Override
+    private void LoadMap() {
+		// TODO Auto-generated method stub
+    	handler.addObject(new Country(706,334,ID.China,Continent.Asia));
+    	handler.addObject(new Country(783,334,ID.Mongolia,Continent.Asia));
+    	handler.addObject(new Country(642,334,ID.Afghanistan,Continent.Asia));
+    	handler.addObject(new Country(706,260,ID.India,Continent.Asia));
+    	handler.addObject(new Country(706,394,ID.Japan,Continent.Asia));
+    	//handler.addObject(new Country(706,334,ID.,Continent.Asia));
+    	//handler.addObject(new Country(706,334,ID.China,Continent.Asia));
+	}
+
+	@Override
     public void run() {
         long lastTime = System.nanoTime();
         double amount_of_ticks = 60.0;
@@ -72,7 +84,7 @@ public class Game extends Canvas implements Runnable {
         }
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.BLACK);
+        g.setColor(Color.white);
         g.fillRect(0,0,WIDTH,HEIGHT);
 
         handler.render(g);

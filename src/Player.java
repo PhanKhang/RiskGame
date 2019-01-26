@@ -20,9 +20,9 @@ public class Player extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        if (id == ID.Player) g.setColor(Color.WHITE);
+        if (id == ID.Player) g.setColor(Color.black);
         if (id == ID.Player2) g.setColor(Color.BLUE);
-        g.fillRect(x,y,10,10);
+        g.fillRect(x,y,30,10);
     }
 
     @Override

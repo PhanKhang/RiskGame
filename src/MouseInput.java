@@ -23,6 +23,10 @@ public class MouseInput extends MouseAdapter {
                 System.out.println(mx+ " "+my +" object pressed: "+tempObject.getId());
                 tempObject.clicked();
             }
+            
+      
+            
+            
         }
     }
 
