@@ -66,7 +66,7 @@ public class Country extends GameObject {
         
         }
     	*/
-       // if(con=="Asia") g.setColor(Color.RED);
+ 
         if (isClicked) g.setColor(Color.GREEN);
         g.drawOval(x, y, 60,60);
 //        g.fillRect(x,y,10,10);
