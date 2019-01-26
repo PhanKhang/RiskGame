@@ -5,7 +5,7 @@ public enum  ID {
     Alaska(),
     Alberta(),
     Army(),
-       Afghanistan(),
+    Afghanistan(),
     Albania(),
     Algeria(),
     Andorra(),
