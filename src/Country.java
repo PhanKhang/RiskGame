@@ -55,14 +55,14 @@ public class Country extends GameObject {
     @Override
     public void render(Graphics g) {
         g.setColor(Color.RED);
-        g.fillOval(this.x, this.y, this.value * 5 + 2, this.value * 5 + 2);
+        g.fillOval((int)this.x, (int)this.y, this.value * 5 + 2, this.value * 5 + 2);
         g.setColor(ownerColor);
         if (this.isClicked) {
             g.setColor(Color.GREEN);
         }
 
-        g.fillOval(this.x + 1, this.y + 1, this.value * 5, this.value * 5);
+        g.fillOval((int)this.x + 1, (int)this.y + 1, this.value * 5, this.value * 5);
         g.setColor(Color.BLUE);
-        g.drawString(this.name, this.x, this.y);
+        g.drawString(this.name, (int)this.x, (int)this.y);
     }
 }

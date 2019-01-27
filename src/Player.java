@@ -30,7 +30,7 @@ public class Player extends GameObject {
     public void render(Graphics g) {
         if (id == ID.Player) g.setColor(Color.WHITE);
         if (id == ID.Player2) g.setColor(Color.BLUE);
-        g.fillRect(x,y,10,10);
+        g.fillRect((int)x,(int)y,10,10);
     }
 
     @Override

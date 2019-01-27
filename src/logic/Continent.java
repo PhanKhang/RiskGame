@@ -11,5 +11,9 @@ public class Continent{
         this.countries = countries;
         this.control_value = control_value;
     }
+
+    public Continent() {
+
+    }
 }
 

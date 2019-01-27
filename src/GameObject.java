@@ -2,11 +2,11 @@ import java.awt.*;
 
 public abstract class GameObject {
 
-    int x, y;
+    float x, y;
     ID id;
-    int velX, velY;
+    float velX, velY;
 
-    public GameObject(int x, int y, ID id){
+    public GameObject(float x, float y, ID id){
         this.x = x;
         this.y = y;
         this.id = id;
@@ -30,11 +30,11 @@ public abstract class GameObject {
         this.y = y;
     }
 
-    public int getX(){
+    public float getX(){
         return x;
     }
 
-    public int getY(){
+    public float getY(){
         return y;
     }
 
@@ -54,11 +54,11 @@ public abstract class GameObject {
         this.velY = Vely;
     }
 
-    public int getVelX(){
+    public float getVelX(){
         return velX;
     }
 
-    public int getVelY(){
+    public float getVelY(){
         return velY;
     }
 

@@ -8,6 +8,7 @@ public class startUp {
     public String mapname;
 
     void readFile(Handler handler){
+        handler.addObject(new Army(100,100,ID.Army));
         try {
             BufferedReader reader = new BufferedReader(new FileReader("entry.txt"));
             String input = reader.readLine();
@@ -48,7 +49,7 @@ public class startUp {
                                     }
                                 }
                                 if (tm1 != null && tm2 != null){
-                                    handler.addObject(new Relations(tm1.getX()+tm1.getValue()*5/2, tm1.getY()+tm1.getValue()*5/2, tm2.getX()+tm1.getValue()*5/2, tm2.getY()+tm1.getValue()*5/2, ID.Relation));
+                                    handler.addObject(new Relations((int)tm1.getX()+tm1.getValue()*5/2, (int)tm1.getY()+tm1.getValue()*5/2, (int)tm2.getX()+tm1.getValue()*5/2, (int)tm2.getY()+tm1.getValue()*5/2, ID.Relation));
                                 }
                                 input = reader.readLine();
                             }
