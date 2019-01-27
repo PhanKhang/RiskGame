@@ -1,9 +1,7 @@
 package logic;
-import java.util.Collections;
+
 import java.util.ArrayList;
-
-import logic.Node;
-
+import java.util.Collections;
 
 
 public class Phases {
@@ -99,12 +97,12 @@ public class Phases {
     private void phase1(Player player) {
         // every continent, node - string
         int x = 0;
-        for (; x < continent.countries.length; x++) {
-            if (player.realms.contains(continent.countries[x])) {
+        for (; x < continent.countries.size(); x++) {
+            if (player.realms.contains(continent.countries.get(x))) {
                 x++;
             }else break;
         }
-        if(x == continent.countries.length){
+        if(x == continent.countries.size()){
             player.army += continent.control_value;
         }else{
             player.army += (player.realms.size() + 1) / 3;

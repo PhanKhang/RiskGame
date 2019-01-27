@@ -1,6 +1,7 @@
 package logic;
 
 import java.util.ArrayList;
+
 public class Node {// a Node is a country
     private String name;
     private ArrayList<Node> neighbours;
