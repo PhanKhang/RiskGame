@@ -13,3 +13,5 @@ Russia 200 200 Europe 10
 France 100 100 Europe 10
 [Relationship]
 Russia China
+France Russia
+Russia Vietnam
