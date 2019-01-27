@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 import logic.Node;
+import logic.Continent;
 
 
 public class Phases {
@@ -11,6 +12,7 @@ public class Phases {
     private ArrayList<Node> graph;
     private ArrayList<Continent> worldmap;
     //get player input from event handler
+    public Continent continent = new Continent();
     private boolean gaming = false;
 
 
@@ -95,10 +97,11 @@ public class Phases {
 
     }
     private void phase1(Player player){
+        for(int x = 0; x < continent.countries.length; x ++){
 
+        }
     }
     private void phase2(Player player){
-
     }
     private void phase3(Player player){
 
