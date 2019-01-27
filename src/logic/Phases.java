@@ -47,7 +47,7 @@ public class Phases {
 //after players type in the number of players and each player's name, call init() to construct the game
     public void init(int numOfPlayers){
         if(numOfPlayers == 0){
-            System.out.println("number of players cant be zero");
+            System.out.println("number of players can't be zero");
         }
         this.numOfPlayers = numOfPlayers;
 
