@@ -10,7 +10,7 @@ public class Phases {
     private Continent[] worldmap;
     //get player input from event handler
     private boolean gaming = false;
-    private boolean wehaveawinner = false;
+
 
 
     public Phases(int numOfPlayers, Node[] graph, Continent[] worldmap ){
@@ -46,11 +46,12 @@ public class Phases {
             Player current_player = players[turn];
             phase1(current_player);
             phase2(current_player);
-            phase3(current_player);
-            if(wehaveawinner){
-                break;
-
+            if(checkGame()){
+                
             }
+
+            phase3(current_player);
+
 
             turnReference++;
             turn = turnReference % this.numOfPlayers;
@@ -68,6 +69,9 @@ public class Phases {
 
     }
     private void phase3(Player player){
+
+    }
+    private boolean checkGame(){//check if we have a winner
 
     }
 
