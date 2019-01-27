@@ -13,7 +13,7 @@ public class Phases {
 
 
 
-    public Phases(int numOfPlayers, Node[] graph, Continent[] worldmap ){
+    public Phases(int numOfPlayers, Node[] graph, Continent[] worldmap){
         this.numOfPlayers = numOfPlayers;
         this.players = new Player[this.numOfPlayers];
         this.graph = graph;
@@ -33,7 +33,8 @@ public class Phases {
         countryAssignment();
         determineOrder();
         //here put a function returning to GUI to print the assignment result and prompt players
-        this.gaming = true;
+        //pass assignment info(which player owns what countries, player order)
+
         gamestart();
 
 
@@ -42,12 +43,14 @@ public class Phases {
     private void gamestart(){
         int turnReference = 0;
         int turn = 0;
-        while(this.gaming){//keep looping until there is a winner
+        Player winner;
+        while(true){//keep looping until there is a winner
             Player current_player = players[turn];
             phase1(current_player);
             phase2(current_player);
             if(checkGame()){
-                
+                winner = current_player;
+                break;
             }
 
             phase3(current_player);
@@ -58,6 +61,7 @@ public class Phases {
 
 
         }
+        System.out.println(winner.name + " is the winner!");//something to return to GUI to tell who wins
     }
     public void passPlayerInput(){
 
