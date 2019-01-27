@@ -20,9 +20,13 @@ public class Game extends Canvas implements Runnable {
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
         new Window(WIDTH, HEIGHT, "Lets build a game!", this);
+        init();
+    }
 
-        handler.addObject(new Player(WIDTH/2 - 100,HEIGHT/2,ID.Player)); // 500 375
+    private void init(){
         handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2));
+        startUp s = new startUp();
+        s.readFile(handler);
     }
 
     @Override
@@ -72,7 +76,7 @@ public class Game extends Canvas implements Runnable {
         }
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
         g.fillRect(0,0,WIDTH,HEIGHT);
 
         handler.render(g);

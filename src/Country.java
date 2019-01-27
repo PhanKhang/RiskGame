@@ -32,6 +32,6 @@ public class Country extends GameObject {
         g.setColor(Color.RED);
         if (isClicked) g.setColor(Color.GREEN);
         g.fillOval(x, y, 10,10);
-//        g.fillRect(x,y,10,10);
+        g.drawString(name, x, y);
     }
 }

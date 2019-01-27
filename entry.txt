@@ -6,8 +6,10 @@ aaa.bmp
 Asia 2
 Europe 2
 [Territories]
-2
-China 300 300
-Russia 200 200
+4
+China 300 300 Asia 10
+Vietnam 400 300 Asia 10
+Russia 200 200 Europe 10
+France 100 100 Europe 10
 [Relationship]
 Russia China

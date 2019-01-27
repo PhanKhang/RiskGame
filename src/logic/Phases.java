@@ -104,7 +104,7 @@ public class Phases {
 
     }
     private boolean checkGame(){//check if we have a winner
-
+        return true;
     }
 
 
