@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 import logic.Node;
-import logic.Continent;
+
 
 
 public class Phases {
@@ -96,11 +96,22 @@ public class Phases {
     public void passPlayerInput(){
 
     }
-    private void phase1(Player player){
-        for(int x = 0; x < continent.countries.length; x ++){
-
+    private void phase1(Player player) {
+        // every continent, node - string
+        int x = 0;
+        for (; x < continent.countries.length; x++) {
+            if (player.realms.contains(continent.countries[x])) {
+                x++;
+            }else break;
+        }
+        if(x == continent.countries.length){
+            player.army += continent.control_value;
+        }else{
+            player.army += (player.realms.size() + 1) / 3;
         }
     }
+
+
     private void phase2(Player player){
     }
     private void phase3(Player player){
