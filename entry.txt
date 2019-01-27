@@ -12,4 +12,5 @@ Vietnam 400 300 Asia 10
 Russia 200 200 Europe 10
 France 100 100 Europe 10
 [Relationship]
+1
 Russia China
