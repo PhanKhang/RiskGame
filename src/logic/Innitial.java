@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public  class startUp {
+public  class Innitial {
     public static String author;
     public static String mapname;
 
@@ -67,7 +67,7 @@ public  class startUp {
     }
 
     public static void main(String[] args) {
-//        startUp.readFile();
+//        Innitial.readFile();
 
 
     }

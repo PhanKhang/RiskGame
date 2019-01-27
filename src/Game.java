@@ -25,8 +25,7 @@ public class Game extends Canvas implements Runnable {
 
     private void init(){
         handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2));
-        startUp s = new startUp();
-        s.readFile(handler);
+
     }
 
     @Override
@@ -37,6 +36,8 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
+        startUp s = new startUp();
+        s.readFile(handler);
         while (running){
             long now = System.nanoTime();
             delta += (now - lastTime) / ns;
