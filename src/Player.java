@@ -1,13 +1,17 @@
+import logic.Node;
+
 import java.awt.*;
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Player extends GameObject {
-    Random rnd = new Random();
+    private String name;
+    private Color playerColor = Color.RED;
+    int unassigned_armies;
 
-    public Player(int x, int y, ID id){
+    public Player(int x, int y, ID id, String name, Color chosenColor){
         super(x, y, id);
-//        velX = rnd.nextInt(10);
-//        velY = rnd.nextInt(10)+1;
+        this.name = name;
+        playerColor = chosenColor;
     }
 
 
@@ -16,6 +20,10 @@ public class Player extends GameObject {
         x += velX;
         y += velY;
 
+    }
+
+    public Color getPlayerColor() {
+        return playerColor;
     }
 
     @Override
@@ -32,7 +40,7 @@ public class Player extends GameObject {
 
     @Override
     public String getName() {
-        return id.toString();
+        return name;
     }
 
     @Override
@@ -44,5 +52,7 @@ public class Player extends GameObject {
     public void released() {
 
     }
+
+    ArrayList<Node> realms;//array of countries owned by this player
 
 }

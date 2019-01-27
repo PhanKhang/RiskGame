@@ -1,3 +1,4 @@
+
 import java.awt.*;
 
 public class Country extends GameObject {
@@ -5,6 +6,9 @@ public class Country extends GameObject {
     private String name;
     private String continent;
     private int value;
+    private GameObject owner;
+    private Color ownerColor = Color.white;
+    private int currentArmies = 0;
 
     public Country(int x, int y, ID id, String name, String continent, int value){
         super(x, y, id);
@@ -14,6 +18,10 @@ public class Country extends GameObject {
 
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
+    }
+
+    public void setOwner(GameObject player) {
+        this.owner = player;
     }
 
 
@@ -35,6 +43,9 @@ public class Country extends GameObject {
 
     public void clicked(){
         isClicked = true;
+        if (owner != null){
+            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
+        }
     }
 
     public void released(){
@@ -44,10 +55,14 @@ public class Country extends GameObject {
     @Override
     public void render(Graphics g) {
         g.setColor(Color.RED);
-        if (isClicked) g.setColor(Color.GREEN);
-        g.fillOval(x, y, value*5,value*5);
-        g.setColor(Color.BLUE);
-        g.drawString(name, x, y);
+        g.fillOval(this.x, this.y, this.value * 5 + 2, this.value * 5 + 2);
+        g.setColor(ownerColor);
+        if (this.isClicked) {
+            g.setColor(Color.GREEN);
+        }
 
+        g.fillOval(this.x + 1, this.y + 1, this.value * 5, this.value * 5);
+        g.setColor(Color.BLUE);
+        g.drawString(this.name, this.x, this.y);
     }
 }
