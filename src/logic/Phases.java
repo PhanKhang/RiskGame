@@ -13,15 +13,16 @@ public class Phases {
 
 
 
-    public Phases(int numOfPlayers, Node[] graph, Continent[] worldmap){
-        this.numOfPlayers = numOfPlayers;
+    public Phases( Node[] graph, Continent[] worldmap){
+//        this.numOfPlayers = numOfPlayers;
         this.players = new Player[this.numOfPlayers];
         this.graph = graph;
         this.worldmap = worldmap;
 
-        this.init();
+
 
     }
+
 
     private void countryAssignment(){}//update players with countries randomly assigned to them. Divide countries as evenly as possible
     //also for each assigned country put one army of its owner to that country
@@ -29,7 +30,8 @@ public class Phases {
 
     }
 
-    private void init(){
+    private void init(int numOfPlayers){
+        this.numOfPlayers = numOfPlayers;
         countryAssignment();
         determineOrder();
         //here put a function returning to GUI to print the assignment result and prompt players
