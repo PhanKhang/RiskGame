@@ -26,6 +26,16 @@ public class Player extends GameObject {
     }
 
     @Override
+    public int getValue() {
+        return 0;
+    }
+
+    @Override
+    public String getName() {
+        return id.toString();
+    }
+
+    @Override
     public void clicked() {
 
     }

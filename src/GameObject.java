@@ -15,7 +15,9 @@ public abstract class GameObject {
     public abstract void tick();
     public abstract void render(Graphics g);
 
-    
+
+    public abstract int getValue();
+    public abstract String getName();
 
     public abstract void clicked();
     public abstract void released();

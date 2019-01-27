@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import logic.Node;
 
 
+
 public class Phases {
     private int numOfPlayers;
     private ArrayList<Player> players;
     private ArrayList<Node> graph;
     private ArrayList<Continent> worldmap;
     //get player input from event handler
+    public Continent continent = new Continent();
     private boolean gaming = false;
 
 
@@ -47,7 +49,7 @@ public class Phases {
 //after players type in the number of players and each player's name, call init() to construct the game
     public void init(int numOfPlayers){
         if(numOfPlayers == 0){
-            System.out.println("number of players cant be zero");
+            System.out.println("number of players can't be zero");
         }
         this.numOfPlayers = numOfPlayers;
 
@@ -94,11 +96,23 @@ public class Phases {
     public void passPlayerInput(){
 
     }
-    private void phase1(Player player){
-
+    private void phase1(Player player) {
+        // every continent, node - string
+        int x = 0;
+        for (; x < continent.countries.length; x++) {
+            if (player.realms.contains(continent.countries[x])) {
+                x++;
+            }else break;
+        }
+        if(x == continent.countries.length){
+            player.army += continent.control_value;
+        }else{
+            player.army += (player.realms.size() + 1) / 3;
+        }
     }
-    private void phase2(Player player){
 
+
+    private void phase2(Player player){
     }
     private void phase3(Player player){
 
