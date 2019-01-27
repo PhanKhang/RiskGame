@@ -20,12 +20,13 @@ public class Game extends Canvas implements Runnable {
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
         new Window(WIDTH, HEIGHT, "Lets build a game!", this);
-        init();
+
     }
 
     private void init(){
-        handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2));
-
+        handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2, "Hero", Color.red));
+        startUp s = new startUp();
+        s.readFile(handler);
     }
 
     @Override
@@ -36,12 +37,13 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
-        startUp s = new startUp();
-        s.readFile(handler);
+        init();
+
         while (running){
             long now = System.nanoTime();
             delta += (now - lastTime) / ns;
             lastTime = now;
+            System.out.println(delta);
             while (delta >= 1){
                 tick();
                 delta --;

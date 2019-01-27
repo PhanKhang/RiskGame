@@ -12,15 +12,21 @@ public class MouseInput extends MouseAdapter {
         int mx = e.getX();
         int my = e.getY();
 
-        System.out.println(mx+ " "+my);
-
-
         for (int i = 0; i < handler.objects.size(); i++) {
             GameObject tempObject = handler.objects.get(i);
 
-            if(tempObject.getX() <= mx && tempObject.getX() + 32 >= mx &&
-                    tempObject.getY() <= my && tempObject.getY() + 32 >= my){
-                System.out.println(mx+ " "+my +" object pressed: "+tempObject.getId());
+            if (tempObject.getX() <= mx && tempObject.getX() + tempObject.getValue() * 5 >= mx && tempObject.getY() <= my && tempObject.getY() + tempObject.getValue() * 5 >= my) {
+
+                System.out.println(mx+ " "+my +" object pressed: "+tempObject.getName());
+                if(tempObject instanceof  Country) {
+                    for (GameObject o: handler.objects) {
+                        if (o.id == ID.Player2){
+                            System.out.println("owner is "+ o.getName());
+                            ((Country) tempObject).setOwner(o);
+                        }
+                    }
+
+                }
                 tempObject.clicked();
             }
         }
@@ -31,14 +37,11 @@ public class MouseInput extends MouseAdapter {
         int mx = e.getX();
         int my = e.getY();
 
-        System.out.println(mx+ " "+my);
-
-
         for (int i = 0; i < handler.objects.size(); i++) {
             GameObject tempObject = handler.objects.get(i);
 
-            if(tempObject.getX() <= mx && tempObject.getX() + 32 >= mx &&
-                    tempObject.getY() <= my && tempObject.getY() + 32 >= my){
+            if (tempObject.getX() <= mx && tempObject.getX() + tempObject.getValue() * 5 >= mx && tempObject.getY() <= my && tempObject.getY() + tempObject.getValue() * 5 >= my) {
+
                 System.out.println(mx+ " "+my +" object released: "+tempObject.getId());
                 tempObject.released();
             }
