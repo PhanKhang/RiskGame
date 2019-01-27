@@ -1,0 +1,13 @@
+[Map]
+author = Bin
+aaa.bmp
+[Continents]
+2
+Asia 2
+Europe 2
+[Territories]
+2
+China 300 300
+Russia 200 200
+[Relationship]
+Russia China

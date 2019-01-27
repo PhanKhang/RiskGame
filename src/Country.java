@@ -2,9 +2,11 @@ import java.awt.*;
 
 public class Country extends GameObject {
     private boolean isClicked = false;
+    private String name;
 
-    public Country(int x, int y, ID id){
+    public Country(int x, int y, ID id, String name){
         super(x, y, id);
+        this.name = name;
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
     }
