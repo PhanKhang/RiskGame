@@ -15,7 +15,7 @@ public class Phases {
 
     public Phases( Node[] graph, Continent[] worldmap){
 //        this.numOfPlayers = numOfPlayers;
-        this.players = new Player[this.numOfPlayers];
+//        this.players = new Player[this.numOfPlayers];
         this.graph = graph;
         this.worldmap = worldmap;
 

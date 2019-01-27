@@ -3,8 +3,8 @@ author = Bin
 aaa.bmp
 [Continents]
 2
-Asia 2
-Europe 2
+Asia 2 20
+Europe 2 15
 [Territories]
 2
 China 300 300
