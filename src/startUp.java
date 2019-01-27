@@ -19,7 +19,10 @@ public class startUp {
                     for(int i = 0; i< numberOfContinents; i++){
                         // do something with this info;
                         // here create continents
-                        reader.readLine();
+                        String country_value = reader.readLine();
+                        String [] parts = country_value.split(" ");
+                        int control_value = Integer.parseInt(parts[1]);
+                        new Continent(parts[0], control_value);
                     }
                     if (reader.readLine().equals("[Territories]")) {
                         int numberOfTerritories = Integer.parseInt(reader.readLine().trim());
