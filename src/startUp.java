@@ -22,7 +22,7 @@ public class startUp {
                         String country_value = reader.readLine();
                         String [] parts = country_value.split(" ");
                         int control_value = Integer.parseInt(parts[1]);
-                        new Continent(0,0, ID.Continent, parts[0], control_value);
+                        handler.addObject(new Continent(0,0, ID.Continent, parts[0], control_value));
                     }
                     if (reader.readLine().equals("[Territories]")) {
                         int numberOfTerritories = Integer.parseInt(reader.readLine().trim());
