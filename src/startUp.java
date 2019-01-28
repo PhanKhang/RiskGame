@@ -8,7 +8,6 @@ public class startUp {
     public String mapname;
 
     void readFile(Handler handler){
-        handler.addObject(new Army(100,100,ID.Army));
         try {
             BufferedReader reader = new BufferedReader(new FileReader("entry.txt"));
             String input = reader.readLine();
@@ -73,4 +72,5 @@ public class startUp {
             e.printStackTrace();
         }
     }
+
 }

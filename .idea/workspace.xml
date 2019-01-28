@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10bacf5f-2328-4e70-aa94-e623cd98b5ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Country.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/ID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/ID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/MouseInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Random.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Random.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Relations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/logic/Continent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/logic/Continent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/logic/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/logic/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/logic/Phases.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/logic/Phases.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/logic/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/logic/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/startUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Army.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Relations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Relations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/Continent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/Continent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/startUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startUp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -61,14 +38,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6566" />
-          <entry key="txt" value="419" />
+          <entry key="java" value="6667" />
+          <entry key="txt" value="423" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6566" />
-          <entry key="PLAIN_TEXT" value="419" />
+          <entry key="JAVA" value="6667" />
+          <entry key="PLAIN_TEXT" value="423" />
         </counts>
       </usages-collector>
     </session>
@@ -87,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/startUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="51" column="181" selection-start-line="51" selection-start-column="181" selection-end-line="51" selection-end-column="181" />
+            <state relative-caret-position="278">
+              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,7 +98,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Army.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -129,10 +106,10 @@
               <folding>
                 <element signature="e#95#96#0" expanded="true" />
                 <element signature="e#126#127#0" expanded="true" />
-                <element signature="e#375#376#0" expanded="true" />
-                <element signature="e#399#400#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#743#744#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -242,10 +219,10 @@
         <option value="$PROJECT_DIR$/src/GameObject.java" />
         <option value="$PROJECT_DIR$/src/Country.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
-        <option value="$PROJECT_DIR$/src/startUp.java" />
         <option value="$PROJECT_DIR$/src/Relations.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/Army.java" />
+        <option value="$PROJECT_DIR$/src/startUp.java" />
       </list>
     </option>
   </component>
@@ -295,7 +272,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548633536255" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548634041604" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -28818,11 +28795,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548565405689</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added army">
+      <created>1548633595119</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1548633595119</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38210000" />
+    <option name="totallyTimeSpent" value="38727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
@@ -28902,7 +28886,8 @@
     <MESSAGE value="Added scaling" />
     <MESSAGE value="latest" />
     <MESSAGE value="added lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lines" />
+    <MESSAGE value="added army" />
+    <option name="LAST_COMMIT_MESSAGE" value="added army" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/RiskGame.iml">
@@ -29057,16 +29042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/startUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="51" column="181" selection-start-line="51" selection-start-column="181" selection-end-line="51" selection-end-column="181" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Relations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -29091,10 +29066,20 @@
           <folding>
             <element signature="e#95#96#0" expanded="true" />
             <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/startUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
