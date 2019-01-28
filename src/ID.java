@@ -5,4 +5,5 @@ public enum  ID {
     Territory(),
     Relation(),
     Army(),
+    Continent()
 }
