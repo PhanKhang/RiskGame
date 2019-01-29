@@ -20,7 +20,7 @@ public class MouseInput extends MouseAdapter {
                 System.out.println(mx+ " "+my +" object pressed: "+tempObject.getName());
                 if(tempObject instanceof  Country) {
                     for (GameObject o: handler.objects) {
-                        if (o.id == ID.Player2){
+                        if (o.id == ID.Player){
                             System.out.println("owner is "+ o.getName());
                             ((Country) tempObject).setOwner(o);
                         }
