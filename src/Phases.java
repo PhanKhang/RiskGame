@@ -1,4 +1,4 @@
-package logic;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,18 +7,20 @@ import java.util.Collections;
 public class Phases {
     private int numOfPlayers;
     private ArrayList<Player> players;
-    private ArrayList<Node> graph;
+    private ArrayList<Country> graph;
     private ArrayList<Continent> worldmap;
     //get player input from event handler
-    public Continent continent = new Continent();
+//    public Continent continent = new Continent();
     private boolean gaming = false;
+    public Handler handler;
 
 
 
-    public Phases(ArrayList<Node> graph, ArrayList<Continent> worldmap){
+    public Phases(ArrayList<Country> graph, ArrayList<Continent> worldmap, Handler handler){
 
         this.graph = graph;
         this.worldmap = worldmap;
+        this.handler = handler;
 
     }
 
@@ -28,10 +30,10 @@ public class Phases {
         Collections.shuffle(this.graph);
         int turnReference = 0;
         int turn = 0;
-        for(Node node : this.graph){
+        for(Country country : this.graph){
             Player player = players.get(turn);
-            player.realms.add(node);
-            node.setOwner(player);
+            player.realms.add(country);
+            country.setOwner(player);
             turnReference++;
             turn = turnReference % players.size();
 
@@ -49,20 +51,23 @@ public class Phases {
         if(numOfPlayers == 0){
             System.out.println("number of players can't be zero");
         }
-        this.numOfPlayers = numOfPlayers;
+        else {
+            this.numOfPlayers = numOfPlayers;
 
-        this.players = new ArrayList<>();
-        for(int i = 0; i < numOfPlayers; i++){
-            this.players.add(new Player(i));//i is the player id
-        }
-        determineOrder();
-        countryAssignment();
+            this.players = new ArrayList<>();
+            for (int i = 0; i < numOfPlayers; i++) {
+                Player tempPlayer = new Player(0, 0, ID.Player, i);
+                this.players.add(tempPlayer);//i is the player id
+                handler.addObject(tempPlayer);
+            }
+            determineOrder();
+            countryAssignment();
 
-        //here put a function returning to GUI to print the assignment result and prompt players
-        //pass assignment info(which player owns what countries, player order)
+            //here put a function returning to GUI to print the assignment result and prompt players
+            //pass assignment info(which player owns what countries, player order)
 
 
-        gamestart();
+            gamestart();
 
 
 

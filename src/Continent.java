@@ -1,40 +1,15 @@
-import java.awt.*;
+import java.util.ArrayList;
 
-public class Continent extends GameObject{
+public class Continent{
     String name;
-    Country[] countries;
+    ArrayList<Country> countries;
     int control_value;
-    public Continent(int x, int y, ID id, String name, int control_value){
-        super(x, y, id);
+    public Continent(String name, int control_value){
+
+
         this.name = name;
         this.control_value = control_value;
-    }
-    @Override
-    public void tick() {
-
+        countries = new ArrayList<>();
     }
 
-    @Override
-    public void render(Graphics g) {
-    }
-
-    @Override
-    public int getValue() {
-        return 0;
-    }
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void clicked() {
-
-    }
-
-    @Override
-    public void released() {
-
-    }
 }

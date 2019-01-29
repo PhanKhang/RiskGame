@@ -1,17 +1,21 @@
-import logic.Node;
+
 
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Player extends GameObject {
-    private String name;
-    private Color playerColor = Color.RED;
-    int unassigned_armies;
 
-    public Player(int x, int y, ID id, String name, Color chosenColor){
+    private Color playerColor = Color.WHITE;
+    int unassigned_armies;
+    public ArrayList<Country> realms;//array of countries owned by this player
+    int army;
+    int seq;//this is primary key for players
+
+    public Player(int x, int y, ID id, int seq){
         super(x, y, id);
-        this.name = name;
-        playerColor = chosenColor;
+        this.realms = new ArrayList<>();
+        this.seq = seq;
+
     }
 
 
@@ -26,11 +30,12 @@ public class Player extends GameObject {
         return playerColor;
     }
 
+
     @Override
     public void render(Graphics g) {
-        if (id == ID.Player) g.setColor(Color.WHITE);
-        if (id == ID.Player2) g.setColor(Color.BLUE);
-        g.fillRect((int)x,(int)y,10,10);
+//        if (id == ID.Player1) g.setColor(Color.WHITE);
+//        if (id == ID.Player2) g.setColor(Color.BLUE);
+//        g.fillRect((int)x,(int)y,10,10);
     }
 
     @Override
@@ -40,8 +45,9 @@ public class Player extends GameObject {
 
     @Override
     public String getName() {
-        return name;
+        return id.toString();
     }
+
 
     @Override
     public void clicked() {
@@ -53,6 +59,6 @@ public class Player extends GameObject {
 
     }
 
-    ArrayList<Node> realms;//array of countries owned by this player
+
 
 }

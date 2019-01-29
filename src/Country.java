@@ -1,27 +1,34 @@
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Country extends GameObject {
+
     private boolean isClicked = false;
     private String name;
-    private String continent;
-    private int value;
-    private GameObject owner;
-    private Color ownerColor = Color.white;
-    private int currentArmies = 0;
 
-    public Country(int x, int y, ID id, String name, String continent, int value){
+
+    private Continent cont;
+    private Player owner;
+    private int current_armies;
+    private int value;
+
+    private ArrayList<Country> neighbours;
+
+    public Country(int x, int y, ID id, String name, Continent continent, int value){
         super(x, y, id);
         this.name = name;
+        this.neighbours = new ArrayList<>();
+        this.cont = cont;
         this.value = value;
-        this.continent = continent;
 
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
     }
 
-    public void setOwner(GameObject player) {
+    public void setOwner(Player player) {
         this.owner = player;
+
     }
 
 
@@ -44,7 +51,7 @@ public class Country extends GameObject {
     public void clicked(){
         isClicked = true;
         if (owner != null){
-            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
+//            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
         }
     }
 
@@ -56,7 +63,7 @@ public class Country extends GameObject {
     public void render(Graphics g) {
         g.setColor(Color.RED);
         g.fillOval((int)this.x, (int)this.y, this.value * 5 + 2, this.value * 5 + 2);
-        g.setColor(ownerColor);
+        g.setColor(owner.getPlayerColor());
         if (this.isClicked) {
             g.setColor(Color.GREEN);
         }
