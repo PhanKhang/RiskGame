@@ -60,7 +60,7 @@ public class Phases {
             for (int i = 0; i < numOfPlayers; i++) {
                 Player tempPlayer = new Player(0, 0, ID.Player, i);
                 this.players.add(tempPlayer);//i is the player id
-                handler.addObject(tempPlayer);
+                handler.addObject(this.players.get(players.size()-1));
             }
             determineOrder();
             countryAssignment();

@@ -46,6 +46,7 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
+        System.out.println("im before the while loop");
 
         while (running){
             long now = System.nanoTime();
@@ -58,6 +59,7 @@ public class Game extends Canvas implements Runnable {
             if (running){
                 try {
                     render();
+                    System.out.println("im rendering");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
