@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Player extends GameObject {
+    private static Color[] ALL_COLORS = {Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, Color.PINK, Color.ORANGE};
 
     private Color playerColor = Color.WHITE;
     int unassigned_armies;
@@ -15,6 +16,7 @@ public class Player extends GameObject {
         super(x, y, id);
         this.realms = new ArrayList<>();
         this.seq = seq;
+        this.playerColor = ALL_COLORS[seq];
 
     }
 
