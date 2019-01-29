@@ -49,10 +49,10 @@ public class Country extends GameObject {
     }
 
     public void clicked(){
-        isClicked = true;
-        if (owner != null){
-//            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
-        }
+//        isClicked = true;
+//        if (owner != null){
+////            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
+//        }
     }
 
     public void released(){
@@ -72,4 +72,5 @@ public class Country extends GameObject {
         g.setColor(Color.BLUE);
         g.drawString(this.name, (int)this.x, (int)this.y);
     }
+
 }

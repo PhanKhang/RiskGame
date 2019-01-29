@@ -18,15 +18,15 @@ public class MouseInput extends MouseAdapter {
             if (tempObject.getX() <= mx && tempObject.getX() + tempObject.getValue() * 5 >= mx && tempObject.getY() <= my && tempObject.getY() + tempObject.getValue() * 5 >= my) {
 
                 System.out.println(mx+ " "+my +" object pressed: "+tempObject.getName());
-                if(tempObject instanceof  Country) {
-                    for (GameObject o: handler.objects) {
-                        if (o.id == ID.Player2){
-                            System.out.println("owner is "+ o.getName());
-                            ((Country) tempObject).setOwner(o);
-                        }
-                    }
-
-                }
+//                if(tempObject instanceof  Country) {
+//                    for (GameObject o: handler.objects) {
+//                        if (o.id == ID.Player){
+//                            System.out.println("owner is "+ o.getName());
+//                            ((Country) tempObject).setOwner(o);
+//                        }
+//                    }
+//
+//                }
                 tempObject.clicked();
             }
         }

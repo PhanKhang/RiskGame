@@ -13,6 +13,7 @@ public class Phases {
 //    public Continent continent = new Continent();
     private boolean gaming = false;
     public Handler handler;
+    private Player current_player;
 
 
 
@@ -44,6 +45,7 @@ public class Phases {
 
     }
     private void determineOrder(){//determine the round robin order for players by changing the order in the players field
+        Collections.shuffle(players);
 
     }
 //after players type in the number of players and each player's name, call init() to construct the game
@@ -67,7 +69,8 @@ public class Phases {
             //pass assignment info(which player owns what countries, player order)
 
 
-            gamestart();
+//            gamestart();
+        }
 
 
 
@@ -78,7 +81,7 @@ public class Phases {
         int turn = 0;
         Player winner;
         while(true){//keep looping until there is a winner
-            Player current_player = players.get(turn);
+            current_player = players.get(turn);
             phase1(current_player);
             phase2(current_player);
             if(checkGame()){
@@ -96,33 +99,34 @@ public class Phases {
         }
         System.out.println(winner.id + " is the winner!");//something to return to GUI to tell who wins
     }
-    public void passPlayerInput(){
-
-    }
     private void phase1(Player player) {
-        // every continent, node - string
-        int x = 0;
-        for (; x < continent.countries.size(); x++) {
-            if (player.realms.contains(continent.countries.get(x))) {
-                x++;
-            }else break;
-        }
-        if(x == continent.countries.size()){
-            player.army += continent.control_value;
-        }else{
-            player.army += (player.realms.size() + 1) / 3;
-        }
+//        // every continent, node - string
+//        int x = 0;
+//        for (; x < continent.countries.size(); x++) {
+//            if (player.realms.contains(continent.countries.get(x))) {
+//                x++;
+//            }else break;
+//        }
+//        if(x == continent.countries.size()){
+//            player.army += continent.control_value;
+//        }else{
+//            player.army += (player.realms.size() + 1) / 3;
+//        }
+//    }
+//
+//
+//    private void phase2(Player player){
+//    }
+//    private void phase3(Player player){
+//
+//    }
+//    private boolean checkGame(){//check if we have a winner
+//        return true;
     }
+    private void phase2(Player player){}
+    private void phase3(Player player){}
+    private boolean checkGame(){return false;}
 
-
-    private void phase2(Player player){
-    }
-    private void phase3(Player player){
-
-    }
-    private boolean checkGame(){//check if we have a winner
-        return true;
-    }
 
 
 

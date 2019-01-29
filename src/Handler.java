@@ -21,6 +21,7 @@ public class Handler {
         objects.add(object);
     }
 
+
     public void removeObject(GameObject object){
         objects.remove(object);
     }

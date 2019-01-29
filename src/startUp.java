@@ -38,8 +38,9 @@ public class startUp {
                             Continent tempcont = findContinent(worldmap, parts[3]);
                             Country tempCountry = new Country(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), ID.Country, parts[0], tempcont, Integer.parseInt(parts[4]));
                             tempcont.countries.add(tempCountry);
-                            handler.addObject(tempCountry);
                             graph.add(tempCountry);
+                            handler.addObject(graph.get(graph.size()-1));
+
 //                            handler.addObject(new Country(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), ID.Country, parts[0],parts[3], Integer.parseInt(parts[4])));
 
                         }

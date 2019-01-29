@@ -21,11 +21,13 @@ public class Game extends Canvas implements Runnable {
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
-        new Window(WIDTH, HEIGHT, "Lets build a game!", this);
+        window = new Window(WIDTH, HEIGHT, "Lets build a game!", this);
         startUp s = new startUp();
         this.phases = s.readFile(handler);
         int numOfPlayers = Integer.parseInt(this.window.promptPlayer("How many players?"));
         this.phases.init(numOfPlayers);
+        this.start();
+
 
     }
 
@@ -44,8 +46,7 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
-        startUp s = new startUp();
-        this.phases = s.readFile(handler);
+
         while (running){
             long now = System.nanoTime();
             delta += (now - lastTime) / ns;
@@ -111,6 +112,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     public static void main(String[] args){
-        new Game();
+        Game game = new Game();
+
     }
 }
