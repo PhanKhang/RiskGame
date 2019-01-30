@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.Graphics;
-import java.io.IOException;
 
 public class Game extends Canvas implements Runnable {
 
@@ -17,16 +16,29 @@ public class Game extends Canvas implements Runnable {
     private Window window;
     private Phases phases;
 
+    private boolean start = false;
+
     public Game(){
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
         window = new Window(WIDTH, HEIGHT, "Lets build a game!", this);
+
         startUp s = new startUp();
         this.phases = s.readFile(handler);
+
         int numOfPlayers = Integer.parseInt(this.window.promptPlayer("How many players?"));
-        this.phases.init(numOfPlayers);
+        if(numOfPlayers <= 6){
+            this.phases.init(numOfPlayers);
+        }
+        else {
+            numOfPlayers = 6;
+            this.phases.init(6);
+        }
+        start = true;
+
         this.start();
+
 
 
     }
@@ -40,6 +52,11 @@ public class Game extends Canvas implements Runnable {
 
     @Override
     public void run() {
+
+        while (start == false);
+
+
+
         long lastTime = System.nanoTime();
         double amount_of_ticks = 60.0;
         double ns = 1000000000 / amount_of_ticks;
@@ -57,12 +74,8 @@ public class Game extends Canvas implements Runnable {
                 delta --;
             }
             if (running){
-                try {
-                    render();
-                    System.out.println("im rendering");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                render();
+//                System.out.println("im rendering");
             }
             frames++;
 
@@ -80,7 +93,7 @@ public class Game extends Canvas implements Runnable {
 
     }
 
-    private void render() throws IOException {
+    private void render(){
         BufferStrategy bs = this.getBufferStrategy();
         if (bs == null){
             this.createBufferStrategy(3);

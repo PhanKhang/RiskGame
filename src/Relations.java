@@ -1,5 +1,5 @@
-import java.awt.Graphics;
 import java.awt.*;
+
 public class Relations extends GameObject{
 	private int x2;
 	private int y2;
@@ -20,6 +20,7 @@ public class Relations extends GameObject{
 	public void render(Graphics g) {
 		
 		// TODO Auto-generated method stub
+		g.setColor(Color.BLACK);
 		g.drawLine((int)x,(int) y, x2, y2);
 	}
 

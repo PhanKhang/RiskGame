@@ -64,13 +64,13 @@ public class Country extends GameObject {
         g.setColor(Color.RED);
         g.fillOval((int)this.x, (int)this.y, this.value * 5 + 2, this.value * 5 + 2);
         g.setColor(owner.getPlayerColor());
-        System.out.println(this.name + " color is set");
+//        System.out.println(this.name + " color is set");
         if (this.isClicked) {
             g.setColor(Color.GREEN);
         }
 
         g.fillOval((int)this.x + 1, (int)this.y + 1, this.value * 5, this.value * 5);
-        g.setColor(Color.BLUE);
+        g.setColor(Color.GREEN);
         g.drawString(this.name, (int)this.x, (int)this.y);
     }
 
