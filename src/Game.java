@@ -14,20 +14,29 @@ public class Game extends Canvas implements Runnable {
     private boolean running = false;
 
     private Handler handler;
+    private Window window;
+    private Phases phases;
 
     public Game(){
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
-        new Window(WIDTH, HEIGHT, "Lets build a game!", this);
-
-    }
-
-    private void init(){
-        handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player2, "Hero", Color.red));
+        window = new Window(WIDTH, HEIGHT, "Lets build a game!", this);
         startUp s = new startUp();
-        s.readFile(handler);
+        this.phases = s.readFile(handler);
+        int numOfPlayers = Integer.parseInt(this.window.promptPlayer("How many players?"));
+        this.phases.init(numOfPlayers);
+        this.start();
+
+
     }
+
+//    private void init(){
+//        handler.addObject(new Player(WIDTH/2 + 100,HEIGHT/2,ID.Player, "Hero", Color.red));
+//        startUp s = new startUp();
+//        this.phases = s.readFile(handler);
+//
+//    }
 
     @Override
     public void run() {
@@ -37,7 +46,7 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
-        init();
+        System.out.println("im before the while loop");
 
         while (running){
             long now = System.nanoTime();
@@ -50,6 +59,7 @@ public class Game extends Canvas implements Runnable {
             if (running){
                 try {
                     render();
+                    System.out.println("im rendering");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -104,6 +114,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     public static void main(String[] args){
-        new Game();
+        Game game = new Game();
+
     }
 }
