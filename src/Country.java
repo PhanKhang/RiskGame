@@ -1,35 +1,27 @@
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Country extends GameObject {
-
     private boolean isClicked = false;
     private String name;
-
-
-    private Continent cont;
-    private Player owner;
+    private String continent;
     private int value;
-    private Color contColor;
+    private GameObject owner;
+    private Color ownerColor = Color.white;
+    private int currentArmies = 0;
 
-    private ArrayList<Country> neighbours;
-
-    public Country(int x, int y, ID id, String name, Continent continent, int value){
+    public Country(int x, int y, ID id, String name, String continent, int value){
         super(x, y, id);
         this.name = name;
-        this.neighbours = new ArrayList<>();
-        this.cont = cont;
         this.value = value;
-        this.contColor = continent.contColor;
+        this.continent = continent;
 
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
     }
 
-    public void setOwner(Player player) {
+    public void setOwner(GameObject player) {
         this.owner = player;
-
     }
 
 
@@ -48,12 +40,22 @@ public class Country extends GameObject {
     public int getValue() {
         return value;
     }
+    
+    
+    public void setArmy() {
+    	currentArmies++;
+      // System.out.println(currentArmies);
+    }
+    
+    public int getArmy() {
+    	return currentArmies;
+    }
 
     public void clicked(){
-//        isClicked = true;
-//        if (owner != null){
-////            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
-//        }
+        isClicked = true;
+        if (owner != null){
+            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
+        }
     }
 
     public void released(){
@@ -64,18 +66,15 @@ public class Country extends GameObject {
     public void render(Graphics g) {
         g.setColor(Color.RED);
         g.fillOval((int)this.x, (int)this.y, this.value * 5 + 2, this.value * 5 + 2);
-        g.setColor(owner.getPlayerColor());
-//        System.out.println(this.name + " color is set");
+        g.setColor(ownerColor);
         if (this.isClicked) {
             g.setColor(Color.GREEN);
         }
 
         g.fillOval((int)this.x + 1, (int)this.y + 1, this.value * 5, this.value * 5);
-        g.setColor(contColor);
+        g.setColor(Color.BLUE);
         g.drawString(this.name, (int)this.x, (int)this.y);
-
-        g.setColor(Color.BLACK);
-        g.drawString(String.valueOf(owner.army),(int)(x+value*2),(int)(y+ value * 3));
     }
+
 
 }
