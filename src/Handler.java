@@ -17,8 +17,16 @@ public class Handler {
         }
     }
 
+    public int getSize(){
+        return objects.size();
+    }
+
     public void addObject(GameObject object){
         objects.add(object);
+    }
+
+    public void addAtPos(GameObject object, int i){
+        objects.add(i, object);
     }
 
 

@@ -42,8 +42,8 @@ public class MouseInput extends MouseAdapter {
 
             if (tempObject.getX() <= mx && tempObject.getX() + tempObject.getValue() * 5 >= mx && tempObject.getY() <= my && tempObject.getY() + tempObject.getValue() * 5 >= my) {
 
-                System.out.println(mx+ " "+my +" object released: "+tempObject.getId());
-                tempObject.released();
+                System.out.println(mx+ " "+my +" object released: "+tempObject.getName());
+//                tempObject.released();
             }
         }
     }

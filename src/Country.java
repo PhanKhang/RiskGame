@@ -12,6 +12,7 @@ public class Country extends GameObject {
     private Player owner;
     private int current_armies;
     private int value;
+    private Color contColor;
 
     private ArrayList<Country> neighbours;
 
@@ -21,6 +22,7 @@ public class Country extends GameObject {
         this.neighbours = new ArrayList<>();
         this.cont = cont;
         this.value = value;
+        this.contColor = continent.contColor;
 
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
@@ -70,8 +72,11 @@ public class Country extends GameObject {
         }
 
         g.fillOval((int)this.x + 1, (int)this.y + 1, this.value * 5, this.value * 5);
-        g.setColor(Color.GREEN);
+        g.setColor(contColor);
         g.drawString(this.name, (int)this.x, (int)this.y);
+
+        g.setColor(Color.BLACK);
+        g.drawString(String.valueOf(current_armies),(int)(x+value*2),(int)(y+ value * 3));
     }
 
 }

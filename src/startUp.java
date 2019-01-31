@@ -9,7 +9,10 @@ public class startUp {
     public String author;
     public String mapname;
 
+    public int current  = 0;
+
     public Phases readFile(Handler handler){
+        current = handler.getSize();
         try {
             BufferedReader reader = new BufferedReader(new FileReader("entry.txt"));
             String input = reader.readLine();
@@ -28,7 +31,7 @@ public class startUp {
                         int control_value = Integer.parseInt(parts[1]);
 
 
-                        worldmap.add(new Continent(parts[0], control_value));
+                        worldmap.add(new Continent(parts[0], control_value, i));
                     }
                     if (reader.readLine().equals("[Territories]")) {
                         int numberOfTerritories = Integer.parseInt(reader.readLine().trim());
@@ -60,7 +63,8 @@ public class startUp {
 
                                 }
                                 if (tm1 != null && tm2 != null){
-                                    handler.addObject(new Relations((int)tm1.getX()+tm1.getValue()*5/2, (int)tm1.getY()+tm1.getValue()*5/2, (int)tm2.getX()+tm1.getValue()*5/2, (int)tm2.getY()+tm1.getValue()*5/2, ID.Relation));
+                                    handler.addAtPos(new Relations((int)tm1.getX()+tm1.getValue()*5/2, (int)tm1.getY()+tm1.getValue()*5/2, (int)tm2.getX()+tm1.getValue()*5/2, (int)tm2.getY()+tm1.getValue()*5/2, ID.Relation), current);
+//                                    handler.addObject(new Relations((int)tm1.getX()+tm1.getValue()*5/2, (int)tm1.getY()+tm1.getValue()*5/2, (int)tm2.getX()+tm1.getValue()*5/2, (int)tm2.getY()+tm1.getValue()*5/2, ID.Relation));
                                 }
                                 input = reader.readLine();
                             }

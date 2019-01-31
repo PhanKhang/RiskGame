@@ -20,7 +20,7 @@ public class Relations extends GameObject{
 	public void render(Graphics g) {
 		
 		// TODO Auto-generated method stub
-		g.setColor(Color.BLACK);
+		g.setColor(Color.GRAY);
 		g.drawLine((int)x,(int) y, x2, y2);
 	}
 
