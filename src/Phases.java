@@ -149,7 +149,4 @@ public class Phases {
     private void phase3(Player player){}
     private boolean checkGame(){return false;}
 
-
-
-
 }

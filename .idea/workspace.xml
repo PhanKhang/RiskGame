@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10bacf5f-2328-4e70-aa94-e623cd98b5ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Continent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Continent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Country.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/MouseInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/MouseInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Relations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/Relations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/startUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RiskGame/startUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RiskGame/Phases.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Phases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Phases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -150,8 +142,8 @@
       <file leaf-file-name="Phases.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Phases.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+            <state relative-caret-position="302">
+              <caret line="150" column="4" selection-start-line="150" selection-start-column="4" selection-end-line="150" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -395,7 +387,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58377000" />
+    <option name="totallyTimeSpent" value="58867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="131" y="23" width="1069" height="777" extended-state="0" />
@@ -682,8 +674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Phases.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+        <state relative-caret-position="302">
+          <caret line="150" column="4" selection-start-line="150" selection-start-column="4" selection-end-line="150" selection-end-column="4" />
         </state>
       </provider>
     </entry>
