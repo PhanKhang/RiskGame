@@ -71,8 +71,6 @@ public class Phases {
             //gamestart();
         }
 
-
-
     }
     private void gamestart(){
 

@@ -10,7 +10,6 @@ public class Country extends GameObject {
 
     private Continent cont;
     private Player owner;
-    private int current_armies;
     private int value;
     private Color contColor;
 
@@ -76,7 +75,7 @@ public class Country extends GameObject {
         g.drawString(this.name, (int)this.x, (int)this.y);
 
         g.setColor(Color.BLACK);
-        g.drawString(String.valueOf(current_armies),(int)(x+value*2),(int)(y+ value * 3));
+        g.drawString(String.valueOf(owner.army),(int)(x+value*2),(int)(y+ value * 3));
     }
 
 }

@@ -9,7 +9,7 @@ public class Player extends GameObject {
     private Color playerColor = Color.WHITE;
     int unassigned_armies;
     public ArrayList<Country> realms;//array of countries owned by this player
-    int army;
+    int army = 1;
     int seq;//this is primary key for players
 
     public Player(int x, int y, ID id, int seq){
@@ -30,6 +30,9 @@ public class Player extends GameObject {
 
     public Color getPlayerColor() {
         return playerColor;
+    }
+    public int getPlayerArmy() {
+        return army;
     }
 
 
