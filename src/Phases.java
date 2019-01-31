@@ -18,7 +18,6 @@ public class Phases {
     private Player current_player;
 
 
-
     public Phases(ArrayList<Country> graph, ArrayList<Continent> worldmap, Handler handler){
 
         this.graph = graph;
@@ -69,7 +68,7 @@ public class Phases {
 
             //here put a function returning to GUI to print the assignment result and prompt players
             //pass assignment info(which player owns what countries, player order)
-            gamestart();
+            //gamestart();
         }
 
 
@@ -99,11 +98,9 @@ public class Phases {
         }
         System.out.println(winner.id + " is the winner!");//something to return to GUI to tell who wins
     }
-    private boolean checkowner (ArrayList<Country> graph, ArrayList<Continent> worldmap, Player player){
-        boolean results = false;
-        int record_continent = 0;
+    private ArrayList<String> checkowner_continent (ArrayList<Country> graph, ArrayList<Continent> worldmap, Player player){
+        ArrayList<String> continent_name = new ArrayList<>();
        for (Continent x : worldmap){
-
            ArrayList<String> continent_countries = new ArrayList<>();
            for (Country y : x.countries){
                continent_countries.add(y.getName());
@@ -119,31 +116,36 @@ public class Phases {
                 }
             }
             if (record == x.countries.size()){
-                record_continent += 1;
+                continent_name.add(x.name);
             }
        }
-        if (record_continent != 0){
-           results = true;
-        }
-        return results;
+        return continent_name;
     }
     private void phase1(Player player) {
-        System.out.println(checkowner(graph, worldmap, current_player));
-//        // every continent, node - string
-//        int x = 0;
-//        for (; x < continent.countries.size(); x++) {
-//            if (player.realms.contains(continent.countries.get(x))) {
-//                x++;
-//            }else break;
+        System.out.println("This is reinforcement phase");
+        int continent_control_value;
+        //continent_name is store for continent name which whole owned by one player
+        ArrayList<String> continent_name = checkowner_continent(graph, worldmap, current_player);
+        String name = continent_name.get(0);
+//        for (Continent x : worldmap){
+////            for (String a : continent_name){
+////                if (x.name == a){
+////                    System.out.println(a);
+////                    continent_control_value = x.control_value;
+////                }
+////            }
+//            if (x.name.equals(name)){
+//                continent_control_value = x.control_value;
+//            }
 //        }
-//        if(x == continent.countries.size()){
-//            player.army += continent.control_value;
-//        }else{
-//            player.army += (player.realms.size() + 1) / 3;
-//        }
-//    }
+//        System.out.println(continent_control_value);
+        if(!continent_name.isEmpty()){
+            //player.army += continent_control_value;
+        }else {
+            player.army += player.realms.size() / 3;
+        }
 
-        //System.out.println(player);
+        System.out.println(player.army);
 
     }
     private void phase2(Player player){
