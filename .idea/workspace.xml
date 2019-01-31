@@ -89,7 +89,7 @@
       <file leaf-file-name="Phases.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Phases.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="167">
               <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
             </state>
           </provider>
@@ -311,7 +311,7 @@
       <workItem from="1548457414292" duration="16618000" />
       <workItem from="1548542877085" duration="280000" />
       <workItem from="1548781892055" duration="6754000" />
-      <workItem from="1548889516579" duration="6397000" />
+      <workItem from="1548889516579" duration="8958000" />
     </task>
     <task id="LOCAL-00001" summary="Added player boxes keyboard events and mouse pressed events">
       <created>1548480352196</created>
@@ -387,7 +387,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52380000" />
+    <option name="totallyTimeSpent" value="54941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="23" width="1280" height="777" extended-state="6" />
@@ -676,24 +676,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/startUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="66" column="51" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Random.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entry.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -734,9 +720,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/entry.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/startUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="66" column="51" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Phases.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="167">
           <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
         </state>
       </provider>

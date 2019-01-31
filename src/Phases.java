@@ -123,28 +123,25 @@ public class Phases {
     }
     private void phase1(Player player) {
         System.out.println("This is reinforcement phase");
-        int continent_control_value;
+        ArrayList<Continent> continent_collection = new ArrayList<>();
+        Continent continent;
         //continent_name is store for continent name which whole owned by one player
         ArrayList<String> continent_name = checkowner_continent(graph, worldmap, current_player);
-        String name = continent_name.get(0);
-//        for (Continent x : worldmap){
-////            for (String a : continent_name){
-////                if (x.name == a){
-////                    System.out.println(a);
-////                    continent_control_value = x.control_value;
-////                }
-////            }
-//            if (x.name.equals(name)){
-//                continent_control_value = x.control_value;
-//            }
-//        }
-//        System.out.println(continent_control_value);
-        if(!continent_name.isEmpty()){
-            //player.army += continent_control_value;
+        for (Continent x : worldmap) {
+            for (String a : continent_name) {
+                if (x.getName() == a) {
+                    continent_collection.add(x);
+
+                }
+            }
+        }
+        if(!continent_collection.isEmpty()){
+            Continent x = continent_collection.get(0);
+            player.army += x.control_value;
+            System.out.println("Continent");
         }else {
             player.army += player.realms.size() / 3;
         }
-
         System.out.println(player.army);
 
     }
