@@ -1,11 +1,12 @@
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
 import java.awt.Graphics;
 
 public class Game extends Canvas implements Runnable {
 
-    public static final int WIDTH = 1200;
-    public static final int HEIGHT = 750;
+    private static final int WIDTH = 1200;
+    private static final int HEIGHT = 750;
 
 
 
@@ -15,13 +16,14 @@ public class Game extends Canvas implements Runnable {
     private Handler handler;
     private Window window;
     private Phases phases;
+    public MouseInputHadler mouseInput;
 
     private boolean start = false;
-
     public Game(){
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
-        this.addMouseListener(new MouseInput(handler));
+//        this.addMouseListener(new MouseInput(handler));
+        mouseInput = new MouseInputHadler(this, handler);
         window = new Window(WIDTH, HEIGHT, "Lets build a game!", this);
 
         startUp s = new startUp();
@@ -35,6 +37,7 @@ public class Game extends Canvas implements Runnable {
             numOfPlayers = 6;
             this.phases.init(6);
         }
+
         start = true;
 
         this.start();
@@ -61,33 +64,56 @@ public class Game extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
-        System.out.println("im before the while loop");
+        int ticks = 0;
+
+//        System.out.println("im before the while loop");
 
         while (running){
             long now = System.nanoTime();
             delta += (now - lastTime) / ns;
             lastTime = now;
+            boolean shouldRender = false;
             while (delta >= 1){
+                ticks++;
                 tick();
                 delta --;
+                shouldRender = true;
             }
-            if (running){
+            if (shouldRender){
+                frames++;
                 render();
-//                System.out.println("im rendering");
             }
-            frames++;
+
             if (System.currentTimeMillis() - timer > 1000){
                 timer += 1000;
-//                System.out.println("FPS "+frames);
+//                System.out.println("FPS "+frames + " ticks "+ticks);
                 frames = 0;
+                ticks = 0;
             }
         }
         stop();
     }
 
     private void tick(){
+        Country chosen = picked();
+
+        if(chosen != null){
+            System.out.println("Caught "+chosen.getName());
+        }
+        resetMouse();
+
         handler.tick();
 
+
+    }
+
+    public void resetMouse(){
+        mouseInput.reset();
+
+    }
+
+    public Country picked(){
+        return (Country) mouseInput.getChosen();
     }
 
     private void render(){
@@ -127,4 +153,5 @@ public class Game extends Canvas implements Runnable {
         Game game = new Game();
 
     }
+
 }

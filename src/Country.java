@@ -19,9 +19,9 @@ public class Country extends GameObject {
         super(x, y, id);
         this.name = name;
         this.neighbours = new ArrayList<>();
-        this.cont = cont;
+        this.cont = continent;
         this.value = value;
-        this.contColor = continent.contColor;
+        this.contColor = cont.contColor;
 
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
@@ -35,8 +35,6 @@ public class Country extends GameObject {
 
     @Override
     public void tick() {
-        x += velX;
-        y += velY;
 
     }
 
@@ -45,20 +43,20 @@ public class Country extends GameObject {
     }
 
     @Override
+    public void clicked() {
+
+    }
+
+    @Override
+    public void released() {
+
+    }
+
+    @Override
     public int getValue() {
         return value;
     }
 
-    public void clicked(){
-//        isClicked = true;
-//        if (owner != null){
-////            if (owner instanceof Player) ownerColor = ((Player) owner).getPlayerColor();
-//        }
-    }
-
-    public void released(){
-        isClicked = false;
-    }
 
     @Override
     public void render(Graphics g) {
