@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.PrimitiveIterator;
 
 
 public class Phases {
@@ -9,6 +10,7 @@ public class Phases {
     private ArrayList<Player> players;
     private ArrayList<Country> graph;
     private ArrayList<Continent> worldmap;
+
     //get player input from event handler
 //    public Continent continent = new Continent();
     private boolean gaming = false;
@@ -67,9 +69,7 @@ public class Phases {
 
             //here put a function returning to GUI to print the assignment result and prompt players
             //pass assignment info(which player owns what countries, player order)
-
-
-//            gamestart();
+            gamestart();
         }
 
 
@@ -99,7 +99,36 @@ public class Phases {
         }
         System.out.println(winner.id + " is the winner!");//something to return to GUI to tell who wins
     }
+    private boolean checkowner (ArrayList<Country> graph, ArrayList<Continent> worldmap, Player player){
+        boolean results = false;
+        int record_continent = 0;
+       for (Continent x : worldmap){
+
+           ArrayList<String> continent_countries = new ArrayList<>();
+           for (Country y : x.countries){
+               continent_countries.add(y.getName());
+           }
+           ArrayList<String> player_countries = new ArrayList<>();
+            for (Country w : player.realms){
+                player_countries.add(w.getName());
+            }
+            int record = 0;
+            for (String a : continent_countries){
+                if (player_countries.contains(a)){
+                    record += 1;
+                }
+            }
+            if (record == x.countries.size()){
+                record_continent += 1;
+            }
+       }
+        if (record_continent != 0){
+           results = true;
+        }
+        return results;
+    }
     private void phase1(Player player) {
+        System.out.println(checkowner(graph, worldmap, current_player));
 //        // every continent, node - string
 //        int x = 0;
 //        for (; x < continent.countries.size(); x++) {
@@ -113,17 +142,13 @@ public class Phases {
 //            player.army += (player.realms.size() + 1) / 3;
 //        }
 //    }
-//
-//
-//    private void phase2(Player player){
-//    }
-//    private void phase3(Player player){
-//
-//    }
-//    private boolean checkGame(){//check if we have a winner
-//        return true;
+
+        //System.out.println(player);
+
     }
-    private void phase2(Player player){}
+    private void phase2(Player player){
+        //System.out.println("Phase2");
+    }
     private void phase3(Player player){}
     private boolean checkGame(){return false;}
 
