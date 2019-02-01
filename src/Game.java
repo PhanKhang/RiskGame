@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
 import java.awt.Graphics;
 
@@ -94,11 +93,22 @@ public class Game extends Canvas implements Runnable {
         stop();
     }
 
-    private void tick(){
+    private int turn = 0;
+    private boolean turnMade = true;
+
+    private void tick(){ // this will loop forever until the winner is found
+        if (turnMade == true){ // add more specifics
+            System.out.println("Current Turn: "+turn);
+            turnMade = false;
+        }
+
+
         Country chosen = picked();
 
-        if(chosen != null){
+        if(chosen != null){ // can be more things here like if country is picked on specific phase etc.
             System.out.println("Caught "+chosen.getName());
+            turnMade = true;
+            turn++;
         }
         resetMouse();
 

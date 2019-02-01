@@ -27,6 +27,10 @@ public class Country extends GameObject {
 //        velY = rnd.nextInt(10)+1;
     }
 
+    public Player getOwner() {
+        return owner;
+    }
+
     public void setOwner(Player player) {
         this.owner = player;
 

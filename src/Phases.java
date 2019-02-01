@@ -26,18 +26,30 @@ public class Phases {
 
     }
 
+    int getInitialArmyCount(int number){
+        switch (number){
+            case 6: return 20;
+            case 5: return 25;
+            case 4: return 30;
+            case 3: return 35;
+            case 2: return 45;
+            default: return 0;
+        }
+    }
+
     //update players with countries randomly assigned to them. Divide countries as evenly as possible
     //also for each assigned country put one army of its owner to that country
     private void countryAssignment(){
         Collections.shuffle(this.graph);
         int turnReference = 0;
         int turn = 0;
-        for(Country country : this.graph){
+        for (Country country : this.graph){
             Player player = players.get(turn);
             player.realms.add(country);
             country.setOwner(player);
             turnReference++;
             turn = turnReference % players.size();
+            player.deployArmy();
 
         }
         //here put a function to pass 'players' and 'graph' to GUI to show how the countries are assigned
@@ -59,7 +71,7 @@ public class Phases {
 
             this.players = new ArrayList<>();
             for (int i = 0; i < numOfPlayers; i++) {
-                Player tempPlayer = new Player(0, 0, ID.Player, i);
+                Player tempPlayer = new Player(0, 0, ID.Player, i, getInitialArmyCount(numOfPlayers));
                 this.players.add(tempPlayer);//i is the player id
                 handler.addObject(tempPlayer);
             }
@@ -72,29 +84,31 @@ public class Phases {
         }
 
     }
-    private void gamestart(){
 
-        int turnReference = 0;
-        int turn = 0;
-        Player winner;
-        while(true){//keep looping until there is a winner
-            current_player = players.get(turn);
-            phase1(current_player);
-            phase2(current_player);
-            if(checkGame()){
-                winner = current_player;
-                break;
-            }
-
-            phase3(current_player);
+    public void gamestart(){
 
 
-            turnReference++;
-            turn = turnReference % this.numOfPlayers;
-
-
-        }
-        System.out.println(winner.id + " is the winner!");//something to return to GUI to tell who wins
+//        int turnReference = 0;
+//        int turn = 0;
+//        Player winner;
+//        while(true){//keep looping until there is a winner
+//            current_player = players.get(turn);
+//            phase1(current_player);
+//            phase2(current_player);
+//            if(checkGame()){
+//                winner = current_player;
+//                break;
+//            }
+//
+//            phase3(current_player);
+//
+//
+//            turnReference++;
+//            turn = turnReference % this.numOfPlayers;
+//
+//
+//        }
+//        System.out.println(winner.id + " is the winner!");//something to return to GUI to tell who wins
     }
     private ArrayList<String> checkowner_continent (ArrayList<Country> graph, ArrayList<Continent> worldmap, Player player){
         ArrayList<String> continent_name = new ArrayList<>();
@@ -119,6 +133,7 @@ public class Phases {
        }
         return continent_name;
     }
+
     private void phase1(Player player) {
         System.out.println("This is reinforcement phase");
         ArrayList<Continent> continent_collection = new ArrayList<>();

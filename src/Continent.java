@@ -8,6 +8,7 @@ public class Continent{
     int control_value;
     public Color contColor;
     boolean check;
+
     public Continent(String name, int control_value, int seq){
         this.name = name;
         this.control_value = control_value;
@@ -16,6 +17,19 @@ public class Continent{
     }
     public String getName() {
         return name;
+    }
+
+    public int continentsSize(){
+        return countries.size();
+    }
+
+    public boolean fullControl(Player owner){
+        for(Country c: countries){
+            if(!owner.equals(c.getOwner())){
+                return false;
+            }
+        }
+        return true;
     }
 
 

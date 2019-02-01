@@ -12,14 +12,24 @@ public class Player extends GameObject {
     int army = 1;
     int seq;//this is primary key for players
 
-    public Player(int x, int y, ID id, int seq){
+    public Player(int x, int y, ID id, int seq, int initailArmycount){
         super(x, y, id);
         this.realms = new ArrayList<>();
         this.seq = seq;
         this.playerColor = ALL_COLORS[seq];
+        this.unassigned_armies = initailArmycount;
 
     }
 
+    public boolean armyLeft(){
+        return unassigned_armies != 0;
+    }
+
+    public void deployArmy(){
+        if(armyLeft()) {
+            unassigned_armies--;
+        }
+    }
 
     @Override
     public void tick() {
