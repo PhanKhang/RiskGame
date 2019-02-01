@@ -13,6 +13,8 @@ public class Country extends GameObject {
     private int value;
     private Color contColor;
 
+    private int stationedArmy = 1;
+
     private ArrayList<Country> neighbours;
 
     public Country(int x, int y, ID id, String name, Continent continent, int value){
@@ -23,8 +25,17 @@ public class Country extends GameObject {
         this.value = value;
         this.contColor = cont.contColor;
 
+
 //        velX = rnd.nextInt(10);
 //        velY = rnd.nextInt(10)+1;
+    }
+
+    public void setStationedArmy(int stationedArmy) {
+        this.stationedArmy = stationedArmy;
+    }
+
+    public int getStationedArmy() {
+        return stationedArmy;
     }
 
     public Player getOwner() {
@@ -77,7 +88,7 @@ public class Country extends GameObject {
         g.drawString(this.name, (int)this.x, (int)this.y);
 
         g.setColor(Color.BLACK);
-        g.drawString(String.valueOf(owner.army),(int)(x+value*2),(int)(y+ value * 3));
+        g.drawString(String.valueOf(stationedArmy),(int)(x+value*2),(int)(y+ value * 3));
     }
 
 }

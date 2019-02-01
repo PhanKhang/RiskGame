@@ -41,10 +41,10 @@ public class Player extends GameObject {
     public Color getPlayerColor() {
         return playerColor;
     }
-    public int getPlayerArmy() {
-        return army;
-    }
 
+    public int getPlayerArmy(){
+        return unassigned_armies;
+    }
 
     @Override
     public void render(Graphics g) {
