@@ -31,17 +31,6 @@ public class Relations extends GameObject{
 		return null;
 	}
 
-	@Override
-	public void clicked() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void released() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public int getValue() {

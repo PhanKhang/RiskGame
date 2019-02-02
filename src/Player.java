@@ -1,5 +1,3 @@
-
-
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -8,9 +6,9 @@ public class Player extends GameObject {
 
     private Color playerColor = Color.WHITE;
     int unassigned_armies;
-    public ArrayList<Country> realms;//array of countries owned by this player
+    public ArrayList<Country> realms;//array list of countries owned by this player
     int army = 1;
-    int seq;//this is primary key for players
+    int seq;    //this is primary key for players
 
     public Player(int x, int y, ID id, int seq, int initailArmycount){
         super(x, y, id);
@@ -33,8 +31,6 @@ public class Player extends GameObject {
 
     @Override
     public void tick() {
-//        x += velX;
-//        y += velY;
 
     }
 
@@ -62,18 +58,5 @@ public class Player extends GameObject {
     public String getName() {
         return id.toString();
     }
-
-
-    @Override
-    public void clicked() {
-
-    }
-
-    @Override
-    public void released() {
-
-    }
-
-
 
 }

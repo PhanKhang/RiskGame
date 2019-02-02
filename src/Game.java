@@ -108,10 +108,13 @@ public class Game extends Canvas implements Runnable {
         if(chosen != null){ // can be more things here like if country is picked on specific phase etc.
             System.out.println("Caught "+chosen.getName());
             System.out.println(chosen.getOwner().getPlayerArmy());
-            chosen.getOwner().deployArmy();
-            chosen.setStationedArmy(chosen.getStationedArmy()+1);
-            turnMade = true;
-            turn++;
+            if (chosen.getOwner().armyLeft()){
+                chosen.getOwner().deployArmy();
+                chosen.setStationedArmy(chosen.getStationedArmy()+1);
+                turnMade = true;
+                turn++;
+            }
+
         }
         resetMouse();
 
@@ -120,12 +123,12 @@ public class Game extends Canvas implements Runnable {
 
     }
 
-    public void resetMouse(){
+    public void resetMouse(){ // reset mouse is used to empty the chosen country
         mouseInput.reset();
 
     }
 
-    public Country picked(){
+    public Country picked(){ // get country picked by the player
         return (Country) mouseInput.getChosen();
     }
 

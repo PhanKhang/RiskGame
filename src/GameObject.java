@@ -19,9 +19,6 @@ public abstract class GameObject {
     public abstract int getValue();
     public abstract String getName();
 
-    public abstract void clicked();
-    public abstract void released();
-
     public void setX (int x){
         this.x = x;
     }

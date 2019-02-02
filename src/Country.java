@@ -57,15 +57,7 @@ public class Country extends GameObject {
         return name;
     }
 
-    @Override
-    public void clicked() {
 
-    }
-
-    @Override
-    public void released() {
-
-    }
 
     @Override
     public int getValue() {
