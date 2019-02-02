@@ -112,6 +112,15 @@ public class Game extends Canvas implements Runnable {
             //move to next phase
             phase = 2;
         }
+        if (phase == 2){
+
+           phase = 3;
+        }
+        if (phase == 3){
+
+            turn ++;
+            phase = 1;
+        }
 
 
         Country chosen = picked();
