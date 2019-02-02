@@ -95,11 +95,22 @@ public class Game extends Canvas implements Runnable {
 
     private int turn = 0;
     private boolean turnMade = true;
+    private int phase = 1;
+
 
     private void tick(){ // this will loop forever until the winner is found
         if (turnMade == true){ // add more specifics
             System.out.println("Current Turn: "+turn);
             turnMade = false;
+        }
+
+        if(phase == 1){
+            //phase 1
+            //smth
+
+
+            //move to next phase
+            phase = 2;
         }
 
 

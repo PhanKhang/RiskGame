@@ -18,15 +18,7 @@ public abstract class GameObject {
 
     public abstract int getValue();
     public abstract String getName();
-
-    public void setX (int x){
-        this.x = x;
-    }
-
-    public void setY (int y){
-        this.y = y;
-    }
-
+    
     public float getX(){
         return x;
     }
@@ -43,20 +35,5 @@ public abstract class GameObject {
         return id;
     }
 
-    public void setVelX (int Velx){
-        this.velX = Velx;
-    }
-
-    public void setVelY (int Vely){
-        this.velY = Vely;
-    }
-
-    public float getVelX(){
-        return velX;
-    }
-
-    public float getVelY(){
-        return velY;
-    }
 
 }

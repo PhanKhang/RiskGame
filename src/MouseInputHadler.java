@@ -29,7 +29,6 @@ public class MouseInputHadler implements MouseListener {
             GameObject tempObject = handler.objects.get(i);
 
             if (tempObject.getX() <= mx && tempObject.getX() + tempObject.getValue() * 5 >= mx && tempObject.getY() <= my && tempObject.getY() + tempObject.getValue() * 5 >= my) {
-
                 System.out.println(mx+ " "+my +" object clicked: "+tempObject.getName());
                 chosen = tempObject;
             }
